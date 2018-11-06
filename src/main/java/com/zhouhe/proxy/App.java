@@ -13,9 +13,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
 import sun.misc.ProxyGenerator;
-
-import com.alibaba.fastjson.JSON;
-
 public class App {
 	public static void main(String[] args) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ClassNotFoundException {
 //		Student st = new StudentImpl();

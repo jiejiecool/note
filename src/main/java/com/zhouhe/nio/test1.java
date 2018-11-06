@@ -1,5 +1,7 @@
 package com.zhouhe.nio;
 
+import org.junit.jupiter.api.Test;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -7,7 +9,6 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import org.junit.Test;
 
 public class test1 {
 	@Test
