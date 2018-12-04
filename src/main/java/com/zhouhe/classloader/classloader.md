@@ -98,7 +98,3 @@ file:/D:/java8/jdk8/jre/classes
 
 总结： bootstrap类加载器主要负责jre/lib下的所有jar包
 
-tomcat类加载器
-
-
-项目中类加载器使用
