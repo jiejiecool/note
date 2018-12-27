@@ -21,7 +21,9 @@ public class myblockingqueue {
 			while(count == arr.length) {
 				writeCondition.await();
 			}
-			
+
+
+			///
 			arr[writeptr] = i;
 			
 			if (++writeptr == arr.length) {

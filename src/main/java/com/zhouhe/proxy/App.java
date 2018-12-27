@@ -12,8 +12,19 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
+
+import org.junit.Test;
 import sun.misc.ProxyGenerator;
 public class App {
+
+	@Test
+	public void test1() throws ClassNotFoundException {
+		Class<?> aClass = Class.forName("com.zhouhe.proxy.Student");
+		Method[] declaredMethods = aClass.getDeclaredMethods();
+		for (Method m : declaredMethods) {
+			System.out.println(m.getName());
+		}
+	}
 	public static void main(String[] args) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException, ClassNotFoundException {
 //		Student st = new StudentImpl();
 //		Student proxy = (Student) Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),
@@ -26,8 +37,8 @@ public class App {
 		InvocationHandler handler = new MyInvokeHandler(new StudentImpl());
 		//2.通过Proxy类为interface类创建动态代理类对象，既生成class 的object
 		Class clazz = Proxy.getProxyClass(Thread.currentThread().getContextClassLoader(), Student.class);
-		 byte[] proxyClass = ProxyGenerator.generateProxyClass(clazz
-	              .getSimpleName(), clazz.getInterfaces());
+		byte[] proxyClass = ProxyGenerator.generateProxyClass(clazz
+				.getSimpleName(), clazz.getInterfaces());
 		 new FileOutputStream(new File("D:\\"+clazz.getName()+".class")).write(proxyClass);
 		
 		System.out.println(clazz.getSuperclass());
@@ -35,6 +46,7 @@ public class App {
 		//3.通过反射从生成的类对象中获得构造函数对象
 		Constructor constructor = clazz.getConstructor(new Class[] {InvocationHandler.class});
 		//4.通过构造函数对象创建动态代理类对象
+
 		Student proxy = (Student) constructor.newInstance(new Object[] {handler});
 		Arrays.asList(proxy.getClass().getDeclaredFields()).forEach(e -> {
 			System.out.println(e.getGenericType() +"--"+e.getName());
