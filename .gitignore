@@ -1,0 +1,10 @@
+*.class
+workspace.xml
+note.iml
+/.idea/
+/.settings/
+/target/
+*.project
+org.*
+
+
