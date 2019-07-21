@@ -1,3 +1,0 @@
-hash一致性模拟
-NODE模拟每个redis缓存节点
-NODEcluster是整个缓存集群
