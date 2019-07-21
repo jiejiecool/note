@@ -13,8 +13,14 @@ ssh-keygen -t rsa -C "username" (注：username为你git上的用户名)
 ```
 
 2. git clone 还是不行，使用ping github.com超时
+
+3.  本身使用具有ssh的功能
    
-3. 使用以下命令
+   ```
+    sudo apt-get install ssh
+   ```
+
+4. 使用以下命令
 ```
 ssh -T git@github.com
 ```
