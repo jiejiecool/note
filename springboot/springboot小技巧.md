@@ -45,3 +45,7 @@ maven依赖引入之后，重新编译项目，然后在yml里面写属性名称
 
 ![属性文件提示](./image/属性文件提示.png)
 
+
+------------------------------------
+springboot可能会同时运行很多服务，直接右上角run会比较迷惑，我们可以开启运行的dashboard，更清晰
+开启方式，view -> tool windows -> services -> run configuration type -> springboot 
